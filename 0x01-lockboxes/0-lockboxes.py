@@ -8,7 +8,7 @@ def canUnlockAll(boxes):
     if boxes_len == 0:
         return False
     visited = set([0])
-    stack: List[int] = [*boxes[0]]
+    stack = [*boxes[0]]
     while (len(stack) != 0):
         key = stack.pop()
         if key > boxes_len - 1:
