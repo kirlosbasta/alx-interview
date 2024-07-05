@@ -1,9 +1,8 @@
 #!/usr/bin/python3
 '''0-lockboxes: Lockboxes'''
-from typing import List
 
 
-def canUnlockAll(boxes: List[List[int]]) -> bool:
+def canUnlockAll(boxes):
     '''Check if all the boxes can be unlocked'''
     boxes_len = len(boxes)
     if boxes_len == 0:
@@ -18,4 +17,4 @@ def canUnlockAll(boxes: List[List[int]]) -> bool:
             continue
         visited.add(key)
         stack.extend(boxes[key])
-    return len(visited) == len(boxes)
+    return len(visited) == boxes_len
