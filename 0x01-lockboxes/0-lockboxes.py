@@ -6,7 +6,7 @@ from typing import List
 def canUnlockAll(boxes: List[List[int]]) -> bool:
     '''Check if all the boxes can be unlocked'''
     if len(boxes) == 0:
-        return True
+        return False
     visited = set([0])
     stack: List[int] = [*boxes[0]]
     while (len(stack) != 0):
