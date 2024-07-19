@@ -39,9 +39,9 @@ def process_lines(lines, status_codes, size):
 
 def print_status(status_codes, file_size):
     '''print a formated status'''
-    print('File size: {}'.format(file_size))
+    print('File size: {:d}'.format(file_size))
     for status_code in sorted(status_codes.keys()):
-        print('{}: {}'.format(status_code, status_codes[status_code]))
+        print('{}: {:d}'.format(status_code, status_codes[status_code]))
 
 
 if __name__ == '__main__':
