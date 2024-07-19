@@ -21,10 +21,12 @@ def main():
                 print_status(status_codes, files_size)
                 count = 0
                 lines = []
+        files_size = process_lines(lines, status_codes, files_size)
+        print_status(status_codes, files_size)
     except KeyboardInterrupt:
         files_size = process_lines(lines, status_codes, files_size)
         print_status(status_codes, files_size)
-        return
+        raise
 
 
 def process_lines(lines, status_codes, size):
@@ -41,7 +43,8 @@ def print_status(status_codes, file_size):
     '''print a formated status'''
     print('File size: {:d}'.format(file_size))
     for status_code in sorted(status_codes.keys()):
-        print('{}: {:d}'.format(status_code, status_codes[status_code]))
+        if status_codes[status_code]:
+            print('{}: {:d}'.format(status_code, status_codes[status_code]))
 
 
 if __name__ == '__main__':
