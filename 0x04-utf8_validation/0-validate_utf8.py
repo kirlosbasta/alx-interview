@@ -19,6 +19,8 @@ def validUTF8(data):
     required_bytes = None
     for num in data:
         sig_bytes = check_num_bytes(num)
+        if sig_bytes > 4:
+            return False
         if not required_bytes and sig_bytes == 1:
             return False
         elif required_bytes and sig_bytes != 1:
