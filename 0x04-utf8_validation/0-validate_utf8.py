@@ -2,14 +2,6 @@
 '''0. UTF-8 Validation'''
 
 
-def print_data(data):
-    '''convert the data to binary'''
-    if not data:
-        return
-    for i in data:
-        print(f'{i} = {i:08b}')
-
-
 def check_num_bytes(num):
     '''return the number of following bytes for num'''
     mask = 1 << 7
@@ -18,6 +10,7 @@ def check_num_bytes(num):
         bytes_num += 1
         mask >>= 1
     return bytes_num
+
 
 def validUTF8(data):
     '''return true if a given data set represents a valid UTF-8 encoding'''
