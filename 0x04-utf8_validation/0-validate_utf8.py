@@ -14,8 +14,9 @@ def check_num_bytes(num):
 
 def validUTF8(data):
     '''return true if a given data set represents a valid UTF-8 encoding'''
+    if not data:
+        return False
     required_bytes = None
-    # print_data(data)
     for num in data:
         sig_bytes = check_num_bytes(num)
         if not required_bytes and sig_bytes == 1:
