@@ -27,4 +27,4 @@ def validUTF8(data):
             required_bytes = sig_bytes - 1 if sig_bytes > 0 else 0
         else:
             required_bytes -= 1
-    return False if required_bytes > 0 else True
+    return required_bytes == 0
