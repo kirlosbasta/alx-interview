@@ -9,7 +9,7 @@ if len(sys.argv) > 2 or len(sys.argv) <= 1:
 
 n = int(sys.argv[1]) if sys.argv[1].isdigit() else None
 
-if type(n) != int:
+if not isinstance(n, int):
     print('N must be a number')
     exit(1)
 elif n < 4:
@@ -19,7 +19,7 @@ elif n < 4:
 
 def is_safe(board, row, col):
     '''check if cell at row, col is safe'''
-    # check each cel in the row 
+    # check each cel in the row
     for i in range(col):
         if board[row][i] == 1:
             return False
@@ -31,7 +31,7 @@ def is_safe(board, row, col):
             return False
         i -= 1
         j -= 1
-        
+
     i, j = row, col
     # check each cell on lower left diagonal
     while i < n and j >= 0:
@@ -70,13 +70,12 @@ def solve_board_util(board, col):
     return res
 
 
-
 def solve_board(n):
     '''sovle N queen problem'''
-    board = [ [ 0 for j in range(n) ] for i in range(n) ]
+    board = [[0 for j in range(n)] for i in range(n)]
     solve_board_util(board, 0)
 
-    solution.sort()    
+    solution.sort()
     for row in solution:
         print(row)
 
